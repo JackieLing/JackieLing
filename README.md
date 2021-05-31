@@ -15,7 +15,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 ![Github Stats](https://github-readme-stats.vercel.app/api?username=JackieLing&show_icons=true)
+![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=JackieLing&hide=contribs,prs)
 
-[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=JackieLing)](https://github.com/anuraghazra/github-readme-stats)
 
 
