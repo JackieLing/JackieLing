@@ -14,28 +14,45 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-## 技术栈 Github 统计
-<img align="right" src="https://github-readme-stats.vercel.app/api?JackieLing=JackieLing&show_icons=true">
+name: GitHub README STATS
 
-Python
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+  push:
+    branches:
+      - main
 
-![Git](https://img.shields.io/badge/-Git-%23F05032?style=for-the-badge&logo=git&logoColor=%23ffffff)
-![VS Code](https://img.shields.io/badge/-VSCode-%23007ACC?style=for-the-badge&logo=visual-studio-code)
+env:
+  GITHUB_NAME: JackieLing
+  GITHUB_EMAIL: 1714873054@qq.com
+  STARED_NUMBER: 10
 
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: My GitHub Status
+        uses: jackieling/github-readme-stats@main
+        with:
+          # if you also want to send TELE
+          TELEGRAM_TOKEN: ${{ secrets.TELE_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELE_CHAT_ID }}
+          STARED_NUMBER: ${{ env.STARED_NUMBER }}
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=for-the-badge&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A)
-![Vue.js](https://img.shields.io/badge/-Vue.js-%232c3e50?style=for-the-badge&logo=Vue.js)
-![Node](https://img.shields.io/badge/-NodeJS-%23F05032?style=for-the-badge&logo=Node.js&logoColor=%23ffffff)
-![Webpack](https://img.shields.io/badge/-Webpack-%232C3A42?style=for-the-badge&logo=webpack)
-
-## 博客
-
-https://github.com/JackieLing
-
-
-https://blog.csdn.net/weixin_43891901?spm=1001.2101.3001.5343
-
-<!-- 访客 -->
-<p align="center">
-  <img src="https://visitor-badge.glitch.me/badge?page_id=JackieLing.JackieLing" alt="visitor badge"/>
-</p>
+      - name: Push README
+        uses: github-actions-x/commit@v2.6
+        with:
+          github-token: ${{ secrets.G_T }}
+          # In this example, you can also use the ${{ secrets.GITHUB_TOKEN }} variable 
+          # Permissions for the GITHUB_TOKEN : https://docs.github.com/en/free-pro-team@latest/actions/reference/authentication-in-a-workflow#permissions-for-the-github_token
+        
+          # If you need more precise Token permission control , you can create a personal access token and set it as a secret in your repository .
+          commit-message: "Refresh README (GITHUB STATUS)"
+          files: README.md
+          rebase: "true"
+          name: ${{ env.GITHUB_NAME }}
+          email: ${{ env.GITHUB_EMAIL }}
