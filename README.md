@@ -8,9 +8,8 @@
 
 - 🙋 Find my **BLOG**  here   
 
-  [HERE]: https://blog.csdn.net/weixin_43891901?spm=1001.2101.3001.5343
+![image](https://github.com/user-attachments/assets/04b67ee9-b70a-46d4-b6d7-2ff4c6388786)
 
-  ![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=JackieLing&show_icons=true&theme=radical)
 
 
 
