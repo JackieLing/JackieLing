@@ -4,7 +4,7 @@
 
 ## :heart:I'm LinghuRongHao:heart:
 
-- 🔭 Junior of Computer Science in CCBUPT College(Honor), Northeast University, China
+- 🔭 Junior of Computer Science in College(Honor), Northeast University, China
 
 - 🙋 Find my **BLOG**  here   
 
